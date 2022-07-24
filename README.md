@@ -1,5 +1,5 @@
 <p align="center">
-  <img src='https://www.animeselection.com/static/media/logo.c6df260c64f5fbd4d45e.webp'>
+  <img src='https://user-images.githubusercontent.com/47890005/180652041-b5396767-1b3e-4620-a47a-4822ad660c84.png'>
   <p align='center'>
     <a href='https://reactjs.org' target='__blank'>
         <img src="https://img.shields.io/badge/Frontend-React-blue?style=flat-square&link=https://reactjs.org">
@@ -10,7 +10,7 @@
 ## About
 
 <p align="center">
-  <img src='https://www.animeselection.com/media/images/github.webp'>
+  <img src='https://user-images.githubusercontent.com/47890005/180651636-9282b0a6-d916-4064-b5b5-3fdcb382f0c6.png'>
 </p>
 
 [Anime Selection ](https://www.animeselection.com) is a React web app, dedicated to the best and most influential anime ever, built with responsive design using HTML, CSS, and JavaScript in React, as well as how to read data from a third-party API.
@@ -25,8 +25,8 @@ I´ve not used any library for the visual elements, except for the Material UI i
 
 <p align="center">
   <img src='https://user-images.githubusercontent.com/47890005/180651261-d0e32001-f2ba-4bed-a026-6075cd5ee9c0.gif'><br></br>
-  <img src='https://www.animeselection.com/media/images/github_gif_2.gif'><br></br>
-  <img src='https://www.animeselection.com/media/images/github_gif_3.gif'>
+  <img src='https://user-images.githubusercontent.com/47890005/180651515-a1db283b-c032-46a3-9526-3d1c1eccdc0e.gif'><br></br>
+  <img src='https://user-images.githubusercontent.com/47890005/180651583-df1f0054-4091-4b0a-b03f-3557c5c7ddfe.gif'>
 </p>
 
 ## Features
