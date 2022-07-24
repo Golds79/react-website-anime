@@ -1,70 +1,65 @@
-# Getting Started with Create React App
+<p align="center">
+  <img src='https://www.animeselection.com/static/media/logo.c6df260c64f5fbd4d45e.webp'>
+  <p align='center'>
+    <a href='https://reactjs.org' target='__blank'>
+        <img src="https://img.shields.io/badge/Frontend-React-blue?style=flat-square&link=https://reactjs.org">
+    </a>
+  </p>
+</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## About
 
-## Available Scripts
+<p align="center">
+  <img src='https://www.animeselection.com/media/images/github.webp'>
+</p>
 
-In the project directory, you can run:
+[Anime Selection ](https://www.animeselection.com) is a React web app, dedicated to the best and most influential anime ever, built with responsive design using HTML, CSS, and JavaScript in React, as well as how to read data from a third-party API.
 
-### `npm start`
+It works like a catalog, consuming real anime data from the [Jikan API](https://jikan.moe/), allowing users to search the [MyAnimeList.net](https://myanimelist.net/) catalog, read a short description of each anime, get information from the creators, and watch trailers. I've also used the [Studio Ghibli API](https://ghibliapi.herokuapp.com/) for your page as it has more accurate information. I have also created a "favorites.json" file on my server to make my own list, due to the limitations of MyAnimeList.net.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+I´ve not used any library for the visual elements, except for the Material UI icon pack. The buttons, navigation bars, dropdown list, menus, and other visual components were created with CSS.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Demo
 
-### `npm test`
+[www.animeselection.com](www.animeselection.com)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<p align="center">
+  <img src='https://www.animeselection.com/media/images/github_gif_1.gif'><br></br>
+  <img src='https://www.animeselection.com/media/images/github_gif_2.gif'><br></br>
+  <img src='https://www.animeselection.com/media/images/github_gif_3.gif'>
+</p>
 
-### `npm run build`
+## Features
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Anime catalog
+- Information about the creators
+- Recommended anime
+- Trailers
+- Blog
+- Filmographies
+- Responsive
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Technologies used
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- [React](https://reactjs.org/)
+- [React Router](https://reactrouter.com/)
+- [React useState](https://reactjs.org/docs/hooks-reference.html#usestate)
+- [React useEffect](https://reactjs.org/docs/hooks-reference.html#useeffect)
+- [React useParams](https://reactrouter.com/docs/en/v6/hooks/use-params)
+- [React Link](https://v5.reactrouter.com/web/api/Link)
+- [React BrowserRouter](https://v5.reactrouter.com/web/api/BrowserRouter)
+- [React MemoryRouter](https://v5.reactrouter.com/web/api/MemoryRouter)
+- [React Props](https://reactjs.org/docs/render-props.html#gatsby-focus-wrapper)
+- [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
+- [Material UI/icons](https://material-ui.com/pt/)
+- [Jikan (API)](https://jikan.moe/)
+- [Studio Ghibli (API)](https://ghibliapi.herokuapp.com/)
 
-### `npm run eject`
+## Installation
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+After cloning the repository, open your terminal and run:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```sh
+npm install
+npm run dev
+```
