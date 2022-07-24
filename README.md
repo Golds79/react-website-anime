@@ -1,5 +1,5 @@
 <p align="center">
-  <img src='https://user-images.githubusercontent.com/47890005/180652041-b5396767-1b3e-4620-a47a-4822ad660c84.png'>
+  <img src='https://user-images.githubusercontent.com/47890005/180652171-1d5b6522-6132-4796-a0ff-c081fa919111.png'>
   <p align='center'>
     <a href='https://reactjs.org' target='__blank'>
         <img src="https://img.shields.io/badge/Frontend-React-blue?style=flat-square&link=https://reactjs.org">
