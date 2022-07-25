@@ -1,70 +1,99 @@
-# Getting Started with Create React App
+<p align="center">
+  <img src='https://user-images.githubusercontent.com/47890005/180652171-1d5b6522-6132-4796-a0ff-c081fa919111.png'>
+  <p align='center'>
+    <a href='https://reactjs.org' target='__blank'>
+        <img src="https://img.shields.io/badge/Frontend-React-blue?style=flat-square&link=https://reactjs.org">
+    </a>
+  </p>
+</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## About
 
-## Available Scripts
+<p align="center">
+  <img src='https://user-images.githubusercontent.com/47890005/180651636-9282b0a6-d916-4064-b5b5-3fdcb382f0c6.png'>
+</p>
 
-In the project directory, you can run:
+[Anime Selection ](https://www.animeselection.com) is a React web app, dedicated to the best and most influential anime ever, built with responsive design using HTML, CSS, and JavaScript in React, as well as how to read data from a third-party API.
 
-### `npm start`
+It works like a catalog, consuming real anime data from the [Jikan API](https://jikan.moe/), allowing users to search the [MyAnimeList.net](https://myanimelist.net/) catalog, read a short description of each anime, get information from the creators, and watch trailers. I've also used the [Studio Ghibli API](https://ghibliapi.herokuapp.com/) for your page as it has more accurate information. I have also created a "favorites.json" file on my server to make my own list, due to the limitations of MyAnimeList.net.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+I´ve not used any library for the visual elements, except for the Material UI icon pack. The buttons, navigation bars, dropdown list, menus, and other visual components were created with CSS.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Demo
 
-### `npm test`
+[www.animeselection.com](www.animeselection.com)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<p align="center">
+  <img src='https://user-images.githubusercontent.com/47890005/180651261-d0e32001-f2ba-4bed-a026-6075cd5ee9c0.gif'><br></br>
+  <img src='https://user-images.githubusercontent.com/47890005/180651515-a1db283b-c032-46a3-9526-3d1c1eccdc0e.gif'><br></br>
+  <img src='https://user-images.githubusercontent.com/47890005/180651583-df1f0054-4091-4b0a-b03f-3557c5c7ddfe.gif'>
+</p>
 
-### `npm run build`
+## Features
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Anime catalog
+- Information about the creators
+- Recommended anime
+- Trailers
+- Blog
+- Filmographies
+- Responsive
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Technologies used
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- [React](https://reactjs.org/)
+- [React Router](https://reactrouter.com/)
+- [React useState](https://reactjs.org/docs/hooks-reference.html#usestate)
+- [React useEffect](https://reactjs.org/docs/hooks-reference.html#useeffect)
+- [React useParams](https://reactrouter.com/docs/en/v6/hooks/use-params)
+- [React Link](https://v5.reactrouter.com/web/api/Link)
+- [React BrowserRouter](https://v5.reactrouter.com/web/api/BrowserRouter)
+- [React MemoryRouter](https://v5.reactrouter.com/web/api/MemoryRouter)
+- [React Props](https://reactjs.org/docs/render-props.html#gatsby-focus-wrapper)
+- [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
+- [Material UI/icons](https://material-ui.com/pt/)
+- [Jikan (API)](https://jikan.moe/)
+- [Studio Ghibli (API)](https://ghibliapi.herokuapp.com/)
 
-### `npm run eject`
+## Full explanation of the project (in Spanish)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+[Anime Selection documentation](https://www.animeselection.com/media/documents/anime-selection.pdf)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Problems and solutions
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+The main problem i've encountered has been when iterating through the elements. Due to the fact that the arrays were inside the objects, or objects inside objects that had arrays inside them, it forced me to look for a solution to be able to print the results on the screen. Even after iterating, i've had to use the optional chaining operator ?, which allows you to read the value of a property located within a chain of connected objects without having to expressly check that each reference in the chain is valid.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Due to the limitations of MyAnimeList to create lists (only 10 movies), the solution was to create my own "favorites.json". For that i downloaded the original MyAnimeList and after adding the anime manually, i uploaded them to my server. But the first problem has been with Cross-Origin Resources (CORS), a security element. To solve it i added some additional nginx directives.
 
-## Learn More
+One of the problems was also when the user clicks to reload a page, then a 404 page not found message appears. This is a problem between React and Apache. The solution is to add a code snippet in the .htaccess.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Another problem that i encountered when creating the application, is that when the page change is made, it did not start from the top, but from the same previous position. To solve this problem i used Window.scrollTo() inside useEffect, to scroll the viewer to a specific set of coordinates in the document, which in my case was 0,0.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+In order to insert images in a page, i had to import them beforehand. Give them a name and add them to the src.
 
-### Code Splitting
+In the StudioGhibli.test i used getByRol indicating 'tab', because with 'main' it gave errors. Both in this test and in RecommendedAnime.test to make the routing work i had to use "MemoryRouter", which saves the history of its "URL" in memory (it does not read or write in the address bar).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## How to clone
 
-### Analyzing the Bundle Size
+git clone https://github.com/urieltierra/react-website-anime.git
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+or manual [download.](https://github.com/urieltierra/react-website-anime/archive/refs/heads/anime-13.zip)
 
-### Making a Progressive Web App
+gh repo clone urieltierra/react-website-anime
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Installation
 
-### Advanced Configuration
+After cloning the repository, open your terminal and run:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```sh
+npm install
+npm run dev
+```
 
-### Deployment
+## Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```sh
+npm run build
+npm run start
+```
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
