@@ -61,11 +61,11 @@ I´ve not used any library for the visual elements, except for the Material UI i
 
 ## Wireframes
 
-[Home](https://www.animeselection.commedia/documents/wireframe_anime_selection_1.jpeg)
-[Single Post](https://www.animeselection.com/media/wireframe_anime_selection_2.jpeg)
-[Single Movie](https://www.animeselection.com/media/documents/wireframe_anime_selection_3.jpeg)
-[Director's Page](https://www.animeselection.com/media/documents/wireframe_anime_selection_4.jpeg)
-[New blog Section](https://www.animeselection.com/media/documents/wireframe_anime_selection_5.jpeg)
+- [Home](https://www.animeselection.commedia/documents/wireframe_anime_selection_1.jpeg)
+- [Single Post](https://www.animeselection.com/media/wireframe_anime_selection_2.jpeg)
+- [Single Movie](https://www.animeselection.com/media/documents/wireframe_anime_selection_3.jpeg)
+- [Director's Page](https://www.animeselection.com/media/documents/wireframe_anime_selection_4.jpeg)
+- [New blog Section](https://www.animeselection.com/media/documents/wireframe_anime_selection_5.jpeg)
 
 ## Problems and solutions
 
