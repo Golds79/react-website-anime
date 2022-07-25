@@ -35,10 +35,6 @@
   justify-content: center;
   align-items: center;
   font-size: 1.2rem;
-  position: -webkit-sticky;
-  position: -moz-sticky;
-  position: -o-sticky;
-  position: -ms-sticky;
   position: sticky;
   top: 0;
   z-index: 999;
@@ -60,7 +56,7 @@
   display: flex;
 }
 .nav-item {
-  max-height: 110px;
+  max-height: 125px;
 }
 .nav-links {
   color: #fff;

@@ -14,6 +14,7 @@ video {
   align-items: center;
   box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.2);
   object-fit: contain;
+  margin: -60px 0;
 }
 .hero-container h2 {
   color: #fff;
