@@ -55,10 +55,6 @@ I´ve not used any library for the visual elements, except for the Material UI i
 - [Jikan (API)](https://jikan.moe/)
 - [Studio Ghibli (API)](https://ghibliapi.herokuapp.com/)
 
-## Full explanation of the project (in Spanish)
-
-[Anime Selection documentation](https://www.animeselection.com/media/documents/anime-selection.pdf)
-
 ## Problems and solutions
 
 The main problem i've encountered has been when iterating through the elements. Due to the fact that the arrays were inside the objects, or objects inside objects that had arrays inside them, it forced me to look for a solution to be able to print the results on the screen. Even after iterating, i've had to use the optional chaining operator ?, which allows you to read the value of a property located within a chain of connected objects without having to expressly check that each reference in the chain is valid.
@@ -96,4 +92,3 @@ npm run dev
 npm run build
 npm run start
 ```
-
