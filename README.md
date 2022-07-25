@@ -87,7 +87,7 @@ In the StudioGhibli.test i used getByRol indicating 'tab', because with 'main' i
 
 git clone https://github.com/urieltierra/react-website-anime.git
 
-or manual [download.](https://github.com/urieltierra/react-website-anime/archive/refs/heads/anime-13.zip)
+or manual [download.](https://github.com/urieltierra/react-website-anime/archive/refs/heads/main.zip)
 
 gh repo clone urieltierra/react-website-anime
 
