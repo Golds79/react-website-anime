@@ -55,6 +55,28 @@ I´ve not used any library for the visual elements, except for the Material UI i
 - [Jikan (API)](https://jikan.moe/)
 - [Studio Ghibli (API)](https://ghibliapi.herokuapp.com/)
 
+## Problems and solutions
+
+The main problem i've encountered has been when iterating through the elements. Due to the fact that the arrays were inside the objects, or objects inside objects that had arrays inside them, it forced me to look for a solution to be able to print the results on the screen. Even after iterating, i've had to use the optional chaining operator ?, which allows you to read the value of a property located within a chain of connected objects without having to expressly check that each reference in the chain is valid.
+
+Due to the limitations of MyAnimeList to create lists (only 10 movies), the solution was to create my own "favorites.json". For that i downloaded the original MyAnimeList and after adding the anime manually, i uploaded them to my server. But the first problem has been with Cross-Origin Resources (CORS), a security element. To solve it i added some additional nginx directives.
+
+One of the problems was also when the user clicks to reload a page, then a 404 page not found message appears. This is a problem between React and Apache. The solution is to add a code snippet in the .htaccess.
+
+Another problem that i encountered when creating the application, is that when the page change is made, it did not start from the top, but from the same previous position. To solve this problem i used Window.scrollTo() inside useEffect, to scroll the viewer to a specific set of coordinates in the document, which in my case was 0,0.
+
+In order to insert images in a page, i had to import them beforehand. Give them a name and add them to the src.
+
+In the StudioGhibli.test i used getByRol indicating 'tab', because with 'main' it gave errors. Both in this test and in RecommendedAnime.test to make the routing work i had to use "MemoryRouter", which saves the history of its "URL" in memory (it does not read or write in the address bar).
+
+## How to clone
+
+git clone https://github.com/urieltierra/react-website-anime.git
+
+or manual [download.](https://github.com/urieltierra/react-website-anime/archive/refs/heads/anime-13.zip)
+
+gh repo clone urieltierra/react-website-anime
+
 ## Installation
 
 After cloning the repository, open your terminal and run:
@@ -62,4 +84,11 @@ After cloning the repository, open your terminal and run:
 ```sh
 npm install
 npm run dev
+```
+
+## Deployment
+
+```sh
+npm run build
+npm run start
 ```
