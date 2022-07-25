@@ -76,15 +76,6 @@ function NavbarSingle() {
                 Recommended
               </Link>
             </li>
-            <li className="nav-item">
-              <Link
-                to="/sign-up"
-                className="nav-links-mobile"
-                onClick={closeMobileMenu}
-              >
-                Sign Up
-              </Link>
-            </li>
             <div className="navbar-social-icon">
               <Link to="/facebook">
                 <i className="fa-brands fa-facebook"></i>

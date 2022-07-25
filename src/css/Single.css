@@ -315,6 +315,11 @@ select {
     flex: 100%;
   }
 }
+@media screen and (max-width: 960px) {
+  .title-text-post {
+    font-size: 32px;
+  }
+}
 @media screen and (max-width: 576px) {
   .title-text {
     font-size: 29px;
@@ -323,6 +328,9 @@ select {
 @media screen and (max-width: 430px) {
   .title-text {
     font-size: 18px;
+  }
+  .title-text-post {
+    font-size: 20px;
   }
   .container-single-left img {
     width: 230px;
