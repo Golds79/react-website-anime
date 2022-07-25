@@ -63,7 +63,7 @@ function Recommended() {
               directed="Directed by Naoko Yamada"
               composer="Music by Kensuke Ushio"
               premiered="Premiered: Sep 17, 2016"
-              path="/isao-takahata"
+              path="/28851"
             />
             <RecommendedItem
               src={image6}
@@ -72,7 +72,7 @@ function Recommended() {
               directed="Directed by Makoto Shinkai"
               composer="Music by Radwimps"
               premiered="Premiered: Aug 26, 2016"
-              path="/isao-takahata"
+              path="/32281"
             />
             <RecommendedItem
               src={image7}
@@ -81,7 +81,7 @@ function Recommended() {
               directed="Directed by Shin'ichirô Ushijima"
               composer="Music by Hiroko Sebu"
               premiered="Premiered: Sep 1, 2018"
-              path="/isao-takahata"
+              path="/36098"
             />
             <RecommendedItem
               src={image8}

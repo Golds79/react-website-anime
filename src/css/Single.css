@@ -186,6 +186,9 @@ select {
   padding: 10px;
   flex: 15%;
 }
+.container-single-left img {
+  width: 100%;
+}
 .container-single-right {
   padding: 10px;
   flex: 40%;
@@ -314,12 +317,12 @@ select {
 }
 @media screen and (max-width: 576px) {
   .title-text {
-    font-size: 39px;
+    font-size: 29px;
   }
 }
 @media screen and (max-width: 430px) {
   .title-text {
-    font-size: 39px;
+    font-size: 18px;
   }
   .container-single-left img {
     width: 230px;
@@ -327,6 +330,6 @@ select {
 }
 @media screen and (max-width: 370px) {
   .title-text {
-    font-size: 20px;
+    font-size: 15px;
   }
 }

@@ -16,6 +16,7 @@ import NightIsShort from './pages/posts/NightIsShort';
 import RecommendedAnime from './pages/RecommendedAnime';
 import SatoshiKon from './pages/SatoshiKon';
 import StudioGhibli from './pages/StudioGhibli';
+import StudioGhibliSingle from './pages/StudioGhibliSingle';
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
             element={<FurandasuNoInu />}
           />
           <Route path="/night-short" element={<NightIsShort />} />
+          <Route path="/studio-ghibli/:id" element={<StudioGhibliSingle />} />
           <Route path="/:id" element={<AnimePageSinglePage />} />
         </Routes>
       </Router>

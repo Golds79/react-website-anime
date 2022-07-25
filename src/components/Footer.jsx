@@ -24,15 +24,23 @@ function Footer() {
               </div>
               <div className="footer-social-icon">
                 <span>Follow us</span>
-                <Link to="/facebook">
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://www.facebook.com"
+                >
                   <i className="fa-brands fa-facebook"></i>
-                </Link>
-                <Link to="/twiiter">
+                </a>
+                <a target="_blank" rel="noreferrer" href="https://twitter.com">
                   <i className="fa-brands fa-twitter"></i>
-                </Link>
-                <Link to="/instagram">
+                </a>
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://www.instagram.com"
+                >
                   <i className="fa-brands fa-instagram"></i>
-                </Link>
+                </a>
               </div>
             </div>
             <div className="footer-item-center">
@@ -104,16 +112,16 @@ function Footer() {
             <ul>
               <Link to="/">Home</Link>
               <li>
-                <Link to="/terms">Terms</Link>
+                <Link to="/">Terms</Link>
               </li>
               <li>
-                <Link to="/privacy">Privacy</Link>
+                <Link to="/">Privacy</Link>
               </li>
               <li>
-                <Link to="/policy">Policy</Link>
+                <Link to="/">Policy</Link>
               </li>
               <li>
-                <Link to="/contact">Contact</Link>
+                <Link to="/">Contact</Link>
               </li>
             </ul>
           </div>

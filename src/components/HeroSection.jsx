@@ -31,6 +31,7 @@ function HeroSection() {
         </Box>
         <Stack direction="row" spacing={2}>
           <Button
+            href="/isao-takahata"
             variant="contained"
             endIcon={<PlayCircleOutlineIcon id="play-circle" />}
             id="btn-hero-left"

@@ -86,15 +86,23 @@ function Navbar() {
               </Link>
             </li>
             <div className="navbar-social-icon">
-              <Link to="/facebook">
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://www.facebook.com"
+              >
                 <i className="fa-brands fa-facebook"></i>
-              </Link>
-              <Link to="/twiiter">
+              </a>
+              <a target="_blank" rel="noreferrer" href="https://twitter.com">
                 <i className="fa-brands fa-twitter"></i>
-              </Link>
-              <Link to="/instagram">
+              </a>
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://www.instagram.com"
+              >
                 <i className="fa-brands fa-instagram"></i>
-              </Link>
+              </a>
             </div>
           </ul>
         </div>
