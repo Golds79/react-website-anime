@@ -1,4 +1,4 @@
-<p align="center">
+ <p align="center">
   <img src='https://user-images.githubusercontent.com/47890005/180652171-1d5b6522-6132-4796-a0ff-c081fa919111.png'>
   <p align='center'>
     <a href='https://reactjs.org' target='__blank'>
@@ -55,6 +55,18 @@ I´ve not used any library for the visual elements, except for the Material UI i
 - [Jikan (API)](https://jikan.moe/)
 - [Studio Ghibli (API)](https://ghibliapi.herokuapp.com/)
 
+## Full explanation of the project (in Spanish)
+
+[Anime Selection documentation](https://www.animeselection.com/media/documents/anime-selection.pdf)
+
+## Wireframes
+
+[Home](https://www.animeselection.commedia/documents/wireframe_anime_selection_1.jpeg)
+[Single Post](https://www.animeselection.com/media/wireframe_anime_selection_2.jpeg)
+[Single Movie](https://www.animeselection.com/media/documents/wireframe_anime_selection_3.jpeg)
+[Director's Page](https://www.animeselection.com/media/documents/wireframe_anime_selection_4.jpeg)
+[New blog Section](https://www.animeselection.com/media/documents/wireframe_anime_selection_5.jpeg)
+
 ## Problems and solutions
 
 The main problem i've encountered has been when iterating through the elements. Due to the fact that the arrays were inside the objects, or objects inside objects that had arrays inside them, it forced me to look for a solution to be able to print the results on the screen. Even after iterating, i've had to use the optional chaining operator ?, which allows you to read the value of a property located within a chain of connected objects without having to expressly check that each reference in the chain is valid.
@@ -68,6 +80,8 @@ Another problem that i encountered when creating the application, is that when t
 In order to insert images in a page, i had to import them beforehand. Give them a name and add them to the src.
 
 In the StudioGhibli.test i used getByRol indicating 'tab', because with 'main' it gave errors. Both in this test and in RecommendedAnime.test to make the routing work i had to use "MemoryRouter", which saves the history of its "URL" in memory (it does not read or write in the address bar).
+
+**IMPORTANT**: If two APIs are used, keep in mind that if the URL of both is based on their ID, the destination directory must be different, otherwise they may conflict.
 
 ## How to clone
 
