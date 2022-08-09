@@ -21,7 +21,7 @@ I´ve not used any library for the visual elements, except for the Material UI i
 
 ## Demo
 
-[www.animeselection.com](www.animeselection.com)
+[www.animeselection.com](https://www.animeselection.com/)
 
 <p align="center">
   <img src='https://user-images.githubusercontent.com/47890005/180651261-d0e32001-f2ba-4bed-a026-6075cd5ee9c0.gif'><br></br>

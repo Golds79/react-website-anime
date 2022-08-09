@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react';
-import NavbarSingle from '../components/NavbarSingle';
+import React, { useEffect, useState, useContext } from 'react';
+import NavbarSingle from '../components/NavbarWatchlist';
 import Footer from '../components/Footer';
 import '../css/Single.css';
 import '../css/Recommended.css';
 import { Link } from 'react-router-dom';
+import { GlobalContext } from '../context/GlobalState';
 
 const getAnimes = async () => {
   try {
@@ -18,6 +19,8 @@ const getAnimes = async () => {
 };
 
 function Recommended() {
+  const { addMovieToWatchlist, watchlist } = useContext(GlobalContext);
+
   const [animes, setAnimes] = useState([]);
   const [animesToRender, setAnimesToRender] = useState([]);
   const [error, setError] = useState(null);
@@ -86,29 +89,36 @@ function Recommended() {
                 ) : (
                   animes &&
                   animesToRender.anime?.map((anime) => {
+                    let storedMovie = watchlist.find(
+                      (o) => o.mal_id === anime.mal_id,
+                    );
+                    const watchlistDisabled = storedMovie ? true : false;
                     return (
                       <div className="recomm-box-item" key={anime.mal_id}>
-                        <Link to={`/${anime.mal_id}`}>
-                          <div className="single-box">
-                            <div className="box-img-single">
-                              <img
-                                src={anime.images.webp.large_image_url}
-                                alt={anime.title}
-                              />
-                            </div>
-                            <div className="box-content-single">
-                              <div className="single-title">
-                                <h4 className="text-img-single">
-                                  {anime.title}
-                                </h4>
-                              </div>
-                              <p className="single-info">
-                                Year: {anime.start_year}
-                              </p>
-                              <p className="single-info">Type: {anime.type}</p>
-                            </div>
+                        <div className="single-box">
+                          <div className="box-img-single">
+                            <img
+                              src={anime.images.webp.large_image_url}
+                              alt={anime.title}
+                            />
                           </div>
-                        </Link>
+                          <div className="box-content-single">
+                            <div className="single-title">
+                              <h4 className="text-img-single">{anime.title}</h4>
+                            </div>
+                            <p className="single-info">
+                              Year: {anime.start_year}
+                            </p>
+                            <p className="single-info">Type: {anime.type}</p>
+                            <button
+                              className="btn-add"
+                              disabled={watchlistDisabled}
+                              onClick={() => addMovieToWatchlist(anime)}
+                            >
+                              Add to Watchlist
+                            </button>
+                          </div>
+                        </div>
                       </div>
                     );
                   })
