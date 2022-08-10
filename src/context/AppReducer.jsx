@@ -20,6 +20,21 @@ function AppReducer(state, action) {
         ),
         watched: [action.payload, ...state.watched],
       };
+    case 'MOVE_TO_WATCHLIST':
+      return {
+        ...state,
+        watched: state.watched.filter(
+          (movie) => movie.mal_id !== action.payload.mal_id,
+        ),
+        watchlist: [action.payload, ...state.watchlist],
+      };
+    case 'REMOVE_FROM_WATCHED':
+      return {
+        ...state,
+        watched: state.watched.filter(
+          (movie) => movie.mal_id !== action.payload,
+        ),
+      };
     default:
       return state;
   }
