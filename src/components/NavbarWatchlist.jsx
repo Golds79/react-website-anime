@@ -32,7 +32,11 @@ function NavbarWatchlist() {
               </Link>
             </li>
             <li className="nav-item">
-              <Link to="/" className="nav-links" onClick={closeMobileMenu}>
+              <Link
+                to="/watchlist"
+                className="nav-links"
+                onClick={closeMobileMenu}
+              >
                 Watch List
               </Link>
             </li>

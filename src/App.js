@@ -18,6 +18,7 @@ import SatoshiKon from './pages/SatoshiKon';
 import StudioGhibli from './pages/StudioGhibli';
 import StudioGhibliSingle from './pages/StudioGhibliSingle';
 import Add from './pages/Add';
+import Watchlist from './pages/Watchlist';
 import Watched from './pages/Watched';
 import { GlobalProvider } from './context/GlobalState';
 
@@ -46,6 +47,7 @@ function App() {
             <Route path="/night-short" element={<NightIsShort />} />
             <Route path="/studio-ghibli/:id" element={<StudioGhibliSingle />} />
             <Route path="/:id" element={<AnimePageSinglePage />} />
+            <Route path="/watchlist" element={<Watchlist />} />
             <Route path="/watched" element={<Watched />} />
             <Route path="/add" element={<Add />} />
           </Routes>

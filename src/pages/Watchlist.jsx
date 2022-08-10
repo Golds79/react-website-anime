@@ -1,18 +1,23 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { GlobalContext } from '../context/GlobalState';
-import ListControls from '../components/ListControls';
-import NavbarWatchlist from '../components/NavbarWatchlist';
+import NavbarSingle from '../components/NavbarWatchlist';
 import Footer from '../components/Footer';
+import ListControls from '../components/ListControls';
 
-function Watched() {
-  const { watched } = useContext(GlobalContext);
+function Watchlist() {
+  const { watchlist } = useContext(GlobalContext);
+  const [error] = useState(null);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [error]);
 
   return (
     <>
-      <NavbarWatchlist />
+      <NavbarSingle />
       <header>
         <div className="img-bg recommended">
-          <h1 className="title-text">Watched Movies</h1>
+          <h1 className="title-text">Watch List</h1>
         </div>
       </header>
       <div className="single-container">
@@ -42,8 +47,8 @@ function Watched() {
           <div className="recomm-container">
             <div className="recomm-box">
               <main className="grid">
-                {watched.length > 0 ? (
-                  watched.map((anime) => (
+                {watchlist.length > 0 ? (
+                  watchlist.map((anime) => (
                     <div className="recomm-box-item" key={anime.mal_id}>
                       <div className="single-box">
                         <div className="box-img-single">
@@ -60,7 +65,7 @@ function Watched() {
                             Year: {anime.start_year}
                           </p>
                           <p className="single-info">Type: {anime.type}</p>
-                          <ListControls type={'watched'} movie={anime} />
+                          <ListControls type={'watchlist'} movie={anime} />
                         </div>
                       </div>
                     </div>
@@ -87,4 +92,4 @@ function Watched() {
   );
 }
 
-export default Watched;
+export default Watchlist;
