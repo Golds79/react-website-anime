@@ -1,4 +1,4 @@
-import NavbarSingle from '../../components/NavbarSingle';
+import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import '../../css/Single.css';
 import '../../css/Recommended.css';
@@ -7,7 +7,7 @@ import ImagePost1 from '../../media/images/posts/night-is-short.webp';
 function NightIsShort() {
   return (
     <>
-      <NavbarSingle />
+      <Navbar />
       <header>
         <div className="img-bg night">
           <h1 className="title-text-post">

@@ -1,8 +1,11 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { useParams } from 'react-router-dom';
-import NavbarSingle from '../components/NavbarSingle';
+import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import '../css/Single.css';
+import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
+import { GlobalContext } from '../context/GlobalState';
 
 const getAnimes = async (mal_id) => {
   try {
@@ -20,6 +23,22 @@ function AnimeSinglePage() {
   let { id } = useParams();
   const [animes, setAnimes] = useState([]);
 
+  const { addMovieToWatchlist, addMovieToWatched, watchlist, watched } =
+    useContext(GlobalContext);
+
+  let storedMovie = watchlist.find((o) => o.mal_id === animes.mal_id);
+  let storedMovieWatched = watched.find((o) => o.mal_id === animes.mal_id);
+  const watchlistDisabled = storedMovie
+    ? true
+    : storedMovieWatched
+    ? true
+    : false;
+  const watchedDisabled = storedMovieWatched
+    ? true
+    : storedMovieWatched
+    ? true
+    : false;
+
   useEffect(() => {
     window.scrollTo(0, 0);
     const fetchAnimes = async () => {
@@ -34,7 +53,7 @@ function AnimeSinglePage() {
 
   return (
     <>
-      <NavbarSingle />
+      <Navbar />
       <header>
         <div className="img-bg recommended">
           <h1 className="title-text">{animes.title}</h1>
@@ -68,12 +87,32 @@ function AnimeSinglePage() {
             <p>
               <span>Rating:</span> {animes.rating}
             </p>
+            <Stack spacing={2} direction="row">
+              <Button
+                disabled={watchlistDisabled}
+                onClick={() => addMovieToWatchlist(animes)}
+                variant="contained"
+                id="btn-single-page"
+              >
+                Add to Watchlist
+              </Button>
+            </Stack>
+            <Stack spacing={2} direction="row">
+              <Button
+                disabled={watchedDisabled}
+                onClick={() => addMovieToWatched(animes)}
+                variant="contained"
+                id="btn-single-page"
+              >
+                Add to Watched
+              </Button>
+            </Stack>
           </div>
         </div>
         <div className="container-trailer">
           <h5 className="single-text">Trailer</h5>
           <div className="line-description"></div>
-          <div class="video-youtube">
+          <div className="video-youtube">
             <iframe
               width="560"
               height="315"

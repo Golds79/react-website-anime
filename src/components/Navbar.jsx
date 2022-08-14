@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../css/Navbar.css';
 
@@ -9,11 +9,29 @@ function Navbar() {
 
   const closeMobileMenu = () => setClick(false);
 
+  // Submenu
+  const ref = useRef();
+
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const checkIfClickedOutside = (e) => {
+      if (isMenuOpen && ref.current && !ref.current.contains(e.target)) {
+        setIsMenuOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', checkIfClickedOutside);
+
+    return () => {
+      document.removeEventListener('mousedown', checkIfClickedOutside);
+    };
+  }, [isMenuOpen]);
+
   return (
     <>
       <nav className="navbar">
         <div className="navbar-container">
-          <h1
+          <div
             className="logo"
             title="Anime Selection - Website dedicated to the most influential anime movies and series of all time"
             onClick={closeMobileMenu}
@@ -21,7 +39,7 @@ function Navbar() {
             <Link to="/" title="Anime Selection">
               <span className="hidden-text">Anime Selection</span>
             </Link>
-          </h1>
+          </div>
           <div className="menu-icon" onClick={handleClick}>
             <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
           </div>
@@ -31,32 +49,46 @@ function Navbar() {
                 Home
               </Link>
             </li>
-            <li className="nav-item">
+            <li className="nav-item nav-menu-item" ref={ref}>
               <Link
-                to="/isao-takahata"
-                className="nav-links"
-                onClick={closeMobileMenu}
+                to=""
+                className="nav-links submenu"
+                onClick={() => setIsMenuOpen((oldState) => !oldState)}
               >
-                Isao Takahata
+                Directors
               </Link>
-            </li>
-            <li className="nav-item">
-              <Link
-                to="/satoshi-kon"
-                className="nav-links"
-                onClick={closeMobileMenu}
-              >
-                Satoshi Kon
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link
-                to="/makoto-shinkai"
-                className="nav-links"
-                onClick={closeMobileMenu}
-              >
-                Makoto Shinkai
-              </Link>
+              {isMenuOpen && (
+                <ul className="nav-submenu">
+                  <li className="nav-submenu-item">
+                    <Link to="/isao-takahata">Isao Takahata</Link>
+                  </li>
+                  <li className="nav-submenu-item">
+                    <Link to="/satoshi-kon" onClick={closeMobileMenu}>
+                      Satoshi Kon
+                    </Link>
+                  </li>
+                  <li className="nav-submenu-item">
+                    <Link to="/makoto-shinkai" onClick={closeMobileMenu}>
+                      Makoto Shinkai
+                    </Link>
+                  </li>
+                  <li className="nav-submenu-item">
+                    <Link to="/hayao-miyazaki" onClick={closeMobileMenu}>
+                      Hayao Miyazaki
+                    </Link>
+                  </li>
+                  <li className="nav-submenu-item">
+                    <Link to="/naoko-yamada" onClick={closeMobileMenu}>
+                      Naoko Yamada
+                    </Link>
+                  </li>
+                  <li className="nav-submenu-item">
+                    <Link to="/mamoru-hosoda" onClick={closeMobileMenu}>
+                      Mamoru Hosoda
+                    </Link>
+                  </li>
+                </ul>
+              )}
             </li>
             <li className="nav-item">
               <Link
@@ -76,24 +108,43 @@ function Navbar() {
                 Recommended
               </Link>
             </li>
+            <li className="nav-item">
+              <Link
+                to="/watchlist"
+                className="nav-links"
+                onClick={closeMobileMenu}
+              >
+                Watch List
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link
+                to="/watched"
+                className="nav-links"
+                onClick={closeMobileMenu}
+              >
+                Watched
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link
+                to="/"
+                className="nav-links btn-add"
+                onClick={closeMobileMenu}
+              >
+                + Add
+              </Link>
+            </li>
             <div className="navbar-social-icon">
-              <a
-                target="_blank"
-                rel="noreferrer"
-                href="https://www.facebook.com"
-              >
+              <Link to="/facebook">
                 <i className="fa-brands fa-facebook"></i>
-              </a>
-              <a target="_blank" rel="noreferrer" href="https://twitter.com">
+              </Link>
+              <Link to="/twiiter">
                 <i className="fa-brands fa-twitter"></i>
-              </a>
-              <a
-                target="_blank"
-                rel="noreferrer"
-                href="https://www.instagram.com"
-              >
+              </Link>
+              <Link to="/instagram">
                 <i className="fa-brands fa-instagram"></i>
-              </a>
+              </Link>
             </div>
           </ul>
         </div>

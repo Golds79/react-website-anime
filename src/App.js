@@ -17,33 +17,42 @@ import RecommendedAnime from './pages/RecommendedAnime';
 import SatoshiKon from './pages/SatoshiKon';
 import StudioGhibli from './pages/StudioGhibli';
 import StudioGhibliSingle from './pages/StudioGhibliSingle';
+import Add from './pages/Add';
+import Watchlist from './pages/Watchlist';
+import Watched from './pages/Watched';
+import { GlobalProvider } from './context/GlobalState';
 
 function App() {
   return (
     <>
-      <Router>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/isao-takahata" element={<IsaoTakahata />} />
-          <Route path="/satoshi-kon" element={<SatoshiKon />} />
-          <Route path="/makoto-shinkai" element={<MakotoShinkai />} />
-          <Route path="/studio-ghibli" element={<StudioGhibli />} />
-          <Route path="/recommended-anime" element={<RecommendedAnime />} />
-          <Route path="/hayao-miyazaki" element={<HayaoMiyazaki />} />
-          <Route path="/naoko-yamada" element={<NaokoYamada />} />
-          <Route path="/mamoru-hosoda" element={<MamoruHosoda />} />
-          <Route path="/akage-no-an" element={<AkageNoAn />} />
-          <Route path="/heidi-japan" element={<HeidiJapan />} />
-          <Route path="/banned-barefoot-gen" element={<BarefootGen />} />
-          <Route
-            path="/furandasu-no-inu-children"
-            element={<FurandasuNoInu />}
-          />
-          <Route path="/night-short" element={<NightIsShort />} />
-          <Route path="/studio-ghibli/:id" element={<StudioGhibliSingle />} />
-          <Route path="/:id" element={<AnimePageSinglePage />} />
-        </Routes>
-      </Router>
+      <GlobalProvider>
+        <Router>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/isao-takahata" element={<IsaoTakahata />} />
+            <Route path="/satoshi-kon" element={<SatoshiKon />} />
+            <Route path="/makoto-shinkai" element={<MakotoShinkai />} />
+            <Route path="/studio-ghibli" element={<StudioGhibli />} />
+            <Route path="/recommended-anime" element={<RecommendedAnime />} />
+            <Route path="/hayao-miyazaki" element={<HayaoMiyazaki />} />
+            <Route path="/naoko-yamada" element={<NaokoYamada />} />
+            <Route path="/mamoru-hosoda" element={<MamoruHosoda />} />
+            <Route path="/akage-no-an" element={<AkageNoAn />} />
+            <Route path="/heidi-japan" element={<HeidiJapan />} />
+            <Route path="/banned-barefoot-gen" element={<BarefootGen />} />
+            <Route
+              path="/furandasu-no-inu-children"
+              element={<FurandasuNoInu />}
+            />
+            <Route path="/night-short" element={<NightIsShort />} />
+            <Route path="/studio-ghibli/:id" element={<StudioGhibliSingle />} />
+            <Route path="/:id" element={<AnimePageSinglePage />} />
+            <Route path="/watchlist" element={<Watchlist />} />
+            <Route path="/watched" element={<Watched />} />
+            <Route path="/add" element={<Add />} />
+          </Routes>
+        </Router>
+      </GlobalProvider>
     </>
   );
 }

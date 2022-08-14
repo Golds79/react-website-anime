@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import NavbarSingle from '../components/NavbarSingle';
+import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import '../css/Single.css';
 
@@ -32,7 +32,7 @@ function AnimeSinglePage() {
 
   return (
     <>
-      <NavbarSingle />
+      <Navbar />
       <header>
         <div className="img-bg recommended">
           <h1 className="title-text">{animes.title}</h1>

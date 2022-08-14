@@ -1,4 +1,4 @@
-import NavbarSingle from '../../components/NavbarSingle';
+import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import '../../css/Single.css';
 import '../../css/Recommended.css';
@@ -6,7 +6,7 @@ import '../../css/Recommended.css';
 function HeidiJapan() {
   return (
     <>
-      <NavbarSingle />
+      <Navbar />
       <header>
         <div className="img-bg heidi">
           <h1 className="title-text-post">

@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import NavbarSingle from '../components/NavbarSingle';
+import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import '../css/Single.css';
 import '../css/Recommended.css';
 import { Link } from 'react-router-dom';
+import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
 
 const getAnimes = async () => {
   try {
@@ -37,7 +39,7 @@ function MamoruHosoda() {
 
   return (
     <>
-      <NavbarSingle />
+      <Navbar />
       <header>
         <div className="img-bg mamoruhosoda">
           <h1 className="title-text">Mamoru Hosoda</h1>
@@ -89,26 +91,37 @@ function MamoruHosoda() {
                 animesToRender.anime?.map((anime) => {
                   return (
                     <div className="recomm-box-item" key={anime.anime.mal_id}>
-                      <Link to={`/${anime.anime.mal_id}`}>
-                        <div className="single-box">
-                          <div className="box-img-single">
-                            <img
-                              src={anime.anime.images.webp.large_image_url}
-                              alt={anime.anime.title}
-                            />
+                      <div className="single-box">
+                        <div className="box-img-single">
+                          <img
+                            src={anime.anime.images.webp.large_image_url}
+                            alt={anime.anime.title}
+                          />
+                        </div>
+                        <div className="box-content-single">
+                          <div className="single-title">
+                            <h4 className="text-img-single">
+                              {anime.anime.title}
+                            </h4>
                           </div>
-                          <div className="box-content-single">
-                            <div className="single-title">
-                              <h4 className="text-img-single">
-                                {anime.anime.title}
-                              </h4>
-                            </div>
-                            <p className="single-info">
-                              Occupation: {anime.position}
-                            </p>
+                          <p className="single-info">
+                            Occupation: {anime.position}
+                          </p>
+                          <div className="btn-box-single">
+                            <Stack spacing={2} direction="row">
+                              <Link
+                                to={{
+                                  pathname: `/${anime.anime.mal_id}`,
+                                }}
+                              >
+                                <Button variant="contained" id="btn-single">
+                                  View more cast details
+                                </Button>
+                              </Link>
+                            </Stack>
                           </div>
                         </div>
-                      </Link>
+                      </div>
                     </div>
                   );
                 })

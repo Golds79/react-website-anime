@@ -68,7 +68,13 @@ function Footer() {
                     <Link to="/recommended-anime">Recommended</Link>
                   </li>
                   <li>
-                    <Link to="/soundtracks">Soundtracks</Link>
+                    <a
+                      href="https://www.jerrygoldsmithlegacy.com/"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Soundtracks
+                    </a>
                   </li>
                 </ul>
               </div>
