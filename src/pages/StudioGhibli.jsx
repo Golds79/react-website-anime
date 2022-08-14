@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import NavbarSingle from '../components/NavbarSingle';
+import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { Link } from 'react-router-dom';
 import '../css/Single.css';
 import '../css/Recommended.css';
+import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
 
 const getAnimes = async () => {
   try {
@@ -49,7 +51,7 @@ function StudioGhibli() {
 
   return (
     <>
-      <NavbarSingle />
+      <Navbar />
       <header>
         <div className="img-bg studioghibli">
           <h1 className="title-text">Studio Ghibli</h1>
@@ -143,27 +145,38 @@ function StudioGhibli() {
                 animes &&
                 animesToRender.map((anime) => (
                   <div className="recomm-box-item" key={anime.id}>
-                    <Link to={`/studio-ghibli/${anime.id}`}>
-                      <div className="single-box">
-                        <div className="box-img-single">
-                          <img src={anime.image} alt={anime.title} />
+                    <div className="single-box">
+                      <div className="box-img-single">
+                        <img src={anime.image} alt={anime.title} />
+                      </div>
+                      <div className="box-content-single">
+                        <div className="single-title">
+                          <h4 className="text-img-single">{anime.title}</h4>
                         </div>
-                        <div className="box-content-single">
-                          <div className="single-title">
-                            <h4 className="text-img-single">{anime.title}</h4>
-                          </div>
-                          <p className="single-info">
-                            Director: {anime.director}
-                          </p>
-                          <p className="single-info">
-                            Producer: {anime.producer}
-                          </p>
-                          <p className="single-info">
-                            Release date: {anime.release_date}
-                          </p>
+                        <p className="single-info">
+                          Director: {anime.director}
+                        </p>
+                        <p className="single-info">
+                          Producer: {anime.producer}
+                        </p>
+                        <p className="single-info">
+                          Release date: {anime.release_date}
+                        </p>
+                        <div className="btn-box-single">
+                          <Stack spacing={2} direction="row">
+                            <Link
+                              to={{
+                                pathname: `/studio-ghibli/${anime.id}`,
+                              }}
+                            >
+                              <Button variant="contained" id="btn-single">
+                                View more cast details
+                              </Button>
+                            </Link>
+                          </Stack>
                         </div>
                       </div>
-                    </Link>
+                    </div>
                   </div>
                 ))
               )}

@@ -146,7 +146,7 @@ select {
   z-index: 5;
 }
 .single-box:hover .box-content-single {
-  height: 150px;
+  height: 300px;
 }
 .single-title {
   padding: 5px 20px 5px 20px;
@@ -160,7 +160,7 @@ select {
   margin: 5px;
 }
 .single-box:hover .box-content-single {
-  background: #ff5351;
+  background: #ff5351de;
   color: #fff;
 }
 .text-img-single {
@@ -303,7 +303,72 @@ select {
   max-width: 750px;
   width: 90%;
 }
-@media (max-width: 960px) {
+#btn-single {
+  margin: 10px auto;
+  min-width: 75%;
+  background-color: #fff;
+  color: #000;
+}
+#btn-single-page {
+  margin: 10px 0;
+  min-width: 50%;
+  background-color: #fff;
+  color: #000;
+}
+#btn-single:disabled,
+#btn-single-page:disabled {
+  background-color: #ffffff8c;
+  color: #888;
+  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
+    0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+}
+.btn-box-single a {
+  margin: 0 auto;
+  width: 100%;
+  text-decoration: none;
+}
+.anime-controls {
+  display: inline;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 5px;
+  padding: 15px 15px;
+  transition: all 0.3s ease;
+}
+.ctrl-btn {
+  color: #fefefe;
+  background-color: transparent;
+  border: none;
+  transition: all 0.3s ease;
+  font-size: 1.25rem;
+  padding: 5px;
+  margin: 25px auto;
+}
+.ctrl-btn:hover {
+  color: #ff5351;
+  cursor: pointer;
+}
+#error {
+  display: flex;
+  flex-direction: column;
+  width: 980px;
+  text-align: center;
+}
+#error span {
+  color: #c4c4c4;
+  font-size: 3rem;
+  text-align: center;
+}
+.img-error {
+  text-align: center;
+  margin: 50px auto;
+}
+.img-error img {
+  width: 450px;
+  height: 337px;
+}
+
+@media screen and (max-width: 960px) {
   .container-single {
     flex-direction: column;
   }
@@ -314,15 +379,28 @@ select {
   .container-single-right {
     flex: 100%;
   }
-}
-@media screen and (max-width: 960px) {
   .title-text-post {
     font-size: 32px;
+  }
+  #error {
+    width: 730px;
+  }
+}
+@media screen and (max-width: 760px) {
+  #error {
+    width: 70vh;
   }
 }
 @media screen and (max-width: 576px) {
   .title-text {
     font-size: 29px;
+  }
+  #error {
+    width: 50vh;
+  }
+  .img-error img {
+    width: 100%;
+    height: auto;
   }
 }
 @media screen and (max-width: 430px) {
@@ -334,6 +412,9 @@ select {
   }
   .container-single-left img {
     width: 230px;
+  }
+  #error {
+    width: 34vh;
   }
 }
 @media screen and (max-width: 370px) {

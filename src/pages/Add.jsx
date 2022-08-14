@@ -1,10 +1,10 @@
 import React from 'react';
-import NavbarWatchlist from '../components/NavbarWatchlist';
+import Navbar from '../components/Navbar';
 
 function Add() {
   return (
     <>
-      <NavbarWatchlist />
+      <Navbar />
       <h1>Add</h1>
     </>
   );
