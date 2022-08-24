@@ -113,6 +113,17 @@ function Footer() {
         <div className="copyright-container">
           <div className="copyright-left">
             <p>Copyright © 2022, All Right Reserved Anime Selection</p>
+            <br />
+            <p>
+              Web Design by &nbsp;
+              <a
+                href="https://www.xtrawebagency.com"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Xtraweb Agency
+              </a>
+            </p>
           </div>
           <div className="copyright-right">
             <ul>
