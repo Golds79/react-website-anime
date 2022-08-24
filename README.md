@@ -19,6 +19,10 @@ It works like a catalog, consuming real anime data from the [Jikan API](https://
 
 I´ve not used any library for the visual elements, except for the Material UI icon pack. The buttons, navigation bars, dropdown list, menus, and other visual components were created with CSS.
 
+## Update August 15, 2022:
+
+The menu bar has a dropdown submenu with an event listener. I have also added the option to save the movies in watchlist and watched, as well as the functionality to remove them from those lists. In the event that it is in Watched, it will automatically disappear from the watchlist and vice versa. This option is without the need to create a record. Both the watchlist and watched are stored in local storage.
+
 ## Demo
 
 [www.animeselection.com](https://www.animeselection.com/)

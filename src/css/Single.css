@@ -367,7 +367,6 @@ select {
   width: 450px;
   height: 337px;
 }
-
 @media screen and (max-width: 960px) {
   .container-single {
     flex-direction: column;
