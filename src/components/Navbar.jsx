@@ -128,7 +128,7 @@ function Navbar() {
             </li>
             <li className="nav-item">
               <Link
-                to="/"
+                to="/add"
                 className="nav-links btn-add"
                 onClick={closeMobileMenu}
               >
