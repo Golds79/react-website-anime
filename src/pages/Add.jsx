@@ -1,12 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import emailjs from '@emailjs/browser';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import '../css/Add.css';
+import ReCAPTCHA from 'react-google-recaptcha';
 
 function Add() {
+  const [validCaptcha, setValidCaptcha] = useState(null);
   const [submittedForm, setsubmittedForm] = useState(false);
+
+  const grecaptchaObject = window.grecaptcha;
+
+  const captcha = useRef(null);
+
+  const onChange = () => {
+    if (captcha.current.getValue()) {
+      console.log('The user is not a robot');
+      setValidCaptcha(true);
+    }
+  };
 
   function sendEmail(object) {
     emailjs.send(
@@ -88,10 +101,18 @@ function Add() {
             return errors;
           }}
           onSubmit={(values, { resetForm }) => {
-            resetForm();
-            setsubmittedForm(true);
-            sendEmail(values);
-            setTimeout(() => setsubmittedForm(false), 5000);
+            if (captcha.current.getValue()) {
+              setsubmittedForm(true);
+              setValidCaptcha(true);
+              console.log('The user is not a robot');
+              sendEmail(values);
+              resetForm();
+              setTimeout(() => setsubmittedForm(false), 5000);
+            } else {
+              console.log('Please accept the captcha');
+              setsubmittedForm(false);
+              setValidCaptcha(false);
+            }
           }}
         >
           {({ errors }) => (
@@ -145,6 +166,17 @@ function Add() {
                   )}
                 />
               </div>
+              <div className="recaptcha">
+                <ReCAPTCHA
+                  grecaptcha={grecaptchaObject}
+                  ref={captcha}
+                  sitekey="6LdUMK0hAAAAAC5tY9Iw3Arur4JEY1QoNro9KdGy"
+                  onChange={onChange}
+                />
+              </div>
+              {validCaptcha === false && (
+                <div className="error-captcha">Please accept the captcha</div>
+              )}
               <button type="submit">Send</button>
               {submittedForm && (
                 <p className="success">Form sent successfully!</p>

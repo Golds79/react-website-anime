@@ -76,3 +76,11 @@ input::-webkit-input-placeholder {
 input:-moz-placeholder {
   color: #858585;
 }
+.recaptcha {
+  margin: 0 auto;
+  width: 50%;
+}
+.error-captcha {
+  color: red;
+  text-align: center;
+}
