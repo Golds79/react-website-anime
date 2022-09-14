@@ -23,6 +23,10 @@ I´ve not used any library for the visual elements, except for the Material UI i
 
 The menu bar has a dropdown submenu with an event listener. I have also added the option to save the movies in watchlist and watched, as well as the functionality to remove them from those lists. In the event that it is in Watched, it will automatically disappear from the watchlist and vice versa. This option is without the need to create a record. Both the watchlist and watched are stored in local storage.
 
+## September 14, 2022:
+
+I have created a page so that the user can add the movies/series that he considers should be in Anime Selection. In the contact form, using the EmailJS service, the user must offer an explanation of why his favorite movie / series must be among the best Anime in history. I have added Google reCAPTCHA to prevent spam or other attacks on the web through the contact form.
+
 ## Demo
 
 [www.animeselection.com](https://www.animeselection.com/)
@@ -38,6 +42,7 @@ The menu bar has a dropdown submenu with an event listener. I have also added th
 - Anime catalog
 - Information about the creators
 - Recommended anime
+- Contact form with Google reCAPTCHA
 - Trailers
 - Blog
 - Filmographies
@@ -58,6 +63,8 @@ The menu bar has a dropdown submenu with an event listener. I have also added th
 - [Material UI/icons](https://material-ui.com/pt/)
 - [Jikan (API)](https://jikan.moe/)
 - [Studio Ghibli (API)](https://ghibliapi.herokuapp.com/)
+- [EmailJS](https://www.emailjs.com/)
+- [reCAPTCHA - Google](https://www.google.com/recaptcha/about/)
 
 ## Full explanation of the project (in Spanish)
 
