@@ -82,11 +82,11 @@
   background-color: #fff;
   color: #000;
 }
-input::-webkit-input-placeholder {
-  color: rgba(255, 255, 255, 0.596);
+.search-box input::-webkit-input-placeholder {
+  color: #fff;
 }
-input:-moz-placeholder {
-  color: rgba(255, 255, 255, 0.596);
+.search-box input:-moz-placeholder {
+  color: #fff;
 }
 .search-box {
   display: flex;
